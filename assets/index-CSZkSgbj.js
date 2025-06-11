@@ -16,77 +16,77 @@
 * @license MIT
 **/let On;const gs=typeof window<"u"&&window.trustedTypes;if(gs)try{On=gs.createPolicy("vue",{createHTML:e=>e})}catch{}const Or=On?e=>On.createHTML(e):e=>e,Mo="http://www.w3.org/2000/svg",Io="http://www.w3.org/1998/Math/MathML",Oe=typeof document<"u"?document:null,_s=Oe&&Oe.createElement("template"),Ro={insert:(e,t,n)=>{t.insertBefore(e,n||null)},remove:e=>{const t=e.parentNode;t&&t.removeChild(e)},createElement:(e,t,n,s)=>{const r=t==="svg"?Oe.createElementNS(Mo,e):t==="mathml"?Oe.createElementNS(Io,e):n?Oe.createElement(e,{is:n}):Oe.createElement(e);return e==="select"&&s&&s.multiple!=null&&r.setAttribute("multiple",s.multiple),r},createText:e=>Oe.createTextNode(e),createComment:e=>Oe.createComment(e),setText:(e,t)=>{e.nodeValue=t},setElementText:(e,t)=>{e.textContent=t},parentNode:e=>e.parentNode,nextSibling:e=>e.nextSibling,querySelector:e=>Oe.querySelector(e),setScopeId(e,t){e.setAttribute(t,"")},insertStaticContent(e,t,n,s,r,i){const o=n?n.previousSibling:t.lastChild;if(r&&(r===i||r.nextSibling))for(;t.insertBefore(r.cloneNode(!0),n),!(r===i||!(r=r.nextSibling)););else{_s.innerHTML=Or(s==="svg"?`<svg>${e}</svg>`:s==="mathml"?`<math>${e}</math>`:e);const l=_s.content;if(s==="svg"||s==="mathml"){const u=l.firstChild;for(;u.firstChild;)l.appendChild(u.firstChild);l.removeChild(u)}t.insertBefore(l,n)}return[o?o.nextSibling:t.firstChild,n?n.previousSibling:t.lastChild]}},Fo=Symbol("_vtc");function Lo(e,t,n){const s=e[Fo];s&&(t=(t?[t,...s]:[...s]).join(" ")),t==null?e.removeAttribute("class"):n?e.setAttribute("class",t):e.className=t}const ms=Symbol("_vod"),qo=Symbol("_vsh"),Ho=Symbol(""),No=/(^|;)\s*display\s*:/;function jo(e,t,n){const s=e.style,r=Y(n);let i=!1;if(n&&!r){if(t)if(Y(t))for(const o of t.split(";")){const l=o.slice(0,o.indexOf(":")).trim();n[l]==null&&Ut(s,l,"")}else for(const o in t)n[o]==null&&Ut(s,o,"");for(const o in n)o==="display"&&(i=!0),Ut(s,o,n[o])}else if(r){if(t!==n){const o=s[Ho];o&&(n+=";"+o),s.cssText=n,i=No.test(n)}}else t&&e.removeAttribute("style");ms in e&&(e[ms]=i?s.display:"",e[qo]&&(s.display="none"))}const bs=/\s*!important$/;function Ut(e,t,n){if(B(n))n.forEach(s=>Ut(e,t,s));else if(n==null&&(n=""),t.startsWith("--"))e.setProperty(t,n);else{const s=$o(e,t);bs.test(n)?e.setProperty(ze(s),n.replace(bs,""),"important"):e[s]=n}}const vs=["Webkit","Moz","ms"],vn={};function $o(e,t){const n=vn[t];if(n)return n;let s=$e(t);if(s!=="filter"&&s in e)return vn[t]=s;s=Bs(s);for(let r=0;r<vs.length;r++){const i=vs[r]+s;if(i in e)return vn[t]=i}return t}const ys="http://www.w3.org/1999/xlink";function Cs(e,t,n,s,r,i=Kr(t)){s&&t.startsWith("xlink:")?n==null?e.removeAttributeNS(ys,t.slice(6,t.length)):e.setAttributeNS(ys,t,n):n==null||i&&!Is(n)?e.removeAttribute(t):e.setAttribute(t,i?"":Ve(n)?String(n):n)}function xs(e,t,n,s,r){if(t==="innerHTML"||t==="textContent"){n!=null&&(e[t]=t==="innerHTML"?Or(n):n);return}const i=e.tagName;if(t==="value"&&i!=="PROGRESS"&&!i.includes("-")){const l=i==="OPTION"?e.getAttribute("value")||"":e.value,u=n==null?e.type==="checkbox"?"on":"":String(n);(l!==u||!("_value"in e))&&(e.value=u),n==null&&e.removeAttribute(t),e._value=n;return}let o=!1;if(n===""||n==null){const l=typeof e[t];l==="boolean"?n=Is(n):n==null&&l==="string"?(n="",o=!0):l==="number"&&(n=0,o=!0)}try{e[t]=n}catch{}o&&e.removeAttribute(r||t)}function Uo(e,t,n,s){e.addEventListener(t,n,s)}function Vo(e,t,n,s){e.removeEventListener(t,n,s)}const ws=Symbol("_vei");function Wo(e,t,n,s,r=null){const i=e[ws]||(e[ws]={}),o=i[t];if(s&&o)o.value=s;else{const[l,u]=Ko(t);if(s){const h=i[t]=Yo(s,r);Uo(e,l,h,u)}else o&&(Vo(e,l,o,u),i[t]=void 0)}}const As=/(?:Once|Passive|Capture)$/;function Ko(e){let t;if(As.test(e)){t={};let s;for(;s=e.match(As);)e=e.slice(0,e.length-s[0].length),t[s[0].toLowerCase()]=!0}return[e[2]===":"?e.slice(3):ze(e.slice(2)),t]}let yn=0;const Qo=Promise.resolve(),Jo=()=>yn||(Qo.then(()=>yn=0),yn=Date.now());function Yo(e,t){const n=s=>{if(!s._vts)s._vts=Date.now();else if(s._vts<=n.attached)return;De(Go(s,n.value),t,5,[s])};return n.value=e,n.attached=Jo(),n}function Go(e,t){if(B(t)){const n=e.stopImmediatePropagation;return e.stopImmediatePropagation=()=>{n.call(e),e._stopped=!0},t.map(s=>r=>!r._stopped&&s&&s(r))}else return t}const Ss=e=>e.charCodeAt(0)===111&&e.charCodeAt(1)===110&&e.charCodeAt(2)>96&&e.charCodeAt(2)<123,ko=(e,t,n,s,r,i)=>{const o=r==="svg";t==="class"?Lo(e,s,o):t==="style"?jo(e,n,s):kt(t)?Mn(t)||Wo(e,t,n,s,i):(t[0]==="."?(t=t.slice(1),!0):t[0]==="^"?(t=t.slice(1),!1):zo(e,t,s,o))?(xs(e,t,s),!e.tagName.includes("-")&&(t==="value"||t==="checked"||t==="selected")&&Cs(e,t,s,o,i,t!=="value")):e._isVueCE&&(/[A-Z]/.test(t)||!Y(s))?xs(e,$e(t),s,i,t):(t==="true-value"?e._trueValue=s:t==="false-value"&&(e._falseValue=s),Cs(e,t,s,o))};function zo(e,t,n,s){if(s)return!!(t==="innerHTML"||t==="textContent"||t in e&&Ss(t)&&M(n));if(t==="spellcheck"||t==="draggable"||t==="translate"||t==="autocorrect"||t==="form"||t==="list"&&e.tagName==="INPUT"||t==="type"&&e.tagName==="TEXTAREA")return!1;if(t==="width"||t==="height"){const r=e.tagName;if(r==="IMG"||r==="VIDEO"||r==="CANVAS"||r==="SOURCE")return!1}return Ss(t)&&Y(n)?!1:t in e}const Xo=Z({patchProp:ko},Ro);let Ts;function Zo(){return Ts||(Ts=so(Xo))}const el=(...e)=>{const t=Zo().createApp(...e),{mount:n}=t;return t.mount=s=>{const r=nl(s);if(!r)return;const i=t._component;!M(i)&&!i.render&&!i.template&&(i.template=r.innerHTML),r.nodeType===1&&(r.textContent="");const o=n(r,!1,tl(r));return r instanceof Element&&(r.removeAttribute("v-cloak"),r.setAttribute("data-v-app","")),o},t};function tl(e){if(e instanceof SVGElement)return"svg";if(typeof MathMLElement=="function"&&e instanceof MathMLElement)return"mathml"}function nl(e){return Y(e)?document.querySelector(e):e}const ae=[{question:`关于Brooks提及的软件开发本质难题，下列说法中不准确的是（ 多选 ）
 
-A : 本质难题总共有四个，分别为复杂、不可⻅、可变和质量挑战
-B : 既然是本质难题，那就说明是根植于软件开发本身，因⽽是不可能在软件开发当中得到缓解
-C : 严格来说，只有不可⻅才是真正的“本质”难题，其他三个因项⽬⽽异
-D : 四⼤本质难题贯穿软件发展的不同历史阶段，但是在不同历史阶段，相互凸显程度不⼀样
-`,answer:"AB"},{question:`下列软件应⽤和开发的典型特征中属于软硬件⼀体化阶段的是（ 多选 ）
+A : 本质难题总共有四个，分别为复杂、不可见、可变和质量挑战
+B : 既然是本质难题，那就说明是根植于软件开发本身，因此是不可能在软件开发当中得到缓解
+C : 严格来说，只有不可见才是真正的“本质”难题，其他三个因项目差异
+D : 四大本质难题贯穿软件发展的不同历史阶段，但是在不同历史阶段，相互凸显程度不一样
+`,answer:"AB"},{question:`下列软件应用和开发的典型特征中属于软硬件一体化阶段的是（ 多选 ）
 
-A : 可以通过引⼊操作系统，摆脱了硬件束缚：软件成为独⽴的产品
-B : ⼏乎不需要考虑 需求变更
-C : 缺乏科班的软件⼯程师
-D : 系统兼容对应软件开发的成败⾮常关键：软件成为独⽴的产品
-`,answer:"BC"},{question:`下列名词和术语中不属于软件过程的有哪些（ 多选 ）
+A : 可以通过引入操作系统，摆脱了硬件束缚：软件成为独立的产品
+B : 几乎不需要考虑 需求变更
+C : 缺乏科班的软件工程师
+D : 系统兼容对应软件开发的成败非常关键：软件成为独立的产品
+`,answer:"BC"},{question:`下列名词和术语中不属于软件过程的是有哪些（ 多选 ）
 
 A : SCRUM
 B : CMM/CMMI
-C : GATE⽅法
+C : GATE方法
 D : IDEAL
-`,answer:"BD"},{question:`CMM的创始⼈是哪位?
+`,answer:"BD"},{question:`CMM的创始人是哪位?
 
 A : Boehm
 B : Juran
 C : Humphrey
 D : Crosby
-`,answer:"C"},{question:`XP规定开发⼈员每周⼯作时间不超过___⼩时，连续加班不可以超过两周，以免降低⽣产率？
+`,answer:"C"},{question:`XP规定开发人员每周工作时间不超过___小时，连续加班不可以超过两周，以免降低生产率？
 
 A : 30
 B : 40
 C : 50
 D : 60
-`,answer:"B"},{question:`下列不属于看板⽅法典型实践的是?（多选）
+`,answer:"B"},{question:`下列不属于看板方法典型实践的是?（多选）
 
-A : 可视化⼯作流
-B : 站⽴式会议
+A : 可视化工作流
+B : 站立式会议
 C : 限定WIP
 D : 重构
-`,answer:"BD"},{question:`完成⼀份完整的项⽬⽇程计划，需要下列哪些信息?（多选）
+`,answer:"BD"},{question:`完成一份完整的项目日程计划，需要下列哪些信息?（多选）
 
 A : 任务清单
 B : 任务顺序
 C : 质量要求
-D : ⼈员资源⽔平
-`,answer:"ABD"},{question:`在TSP的团队组建过程中，确定软件开发策略的是第⼏次会议?
+D : 人员资源水平
+`,answer:"ABD"},{question:`在TSP的团队组建过程中，确定软件开发策略的是第几次会议?
 
-A : 第⼀次
-B : 第⼆次
+A : 第一次
+B : 第二次
 C : 第三次
 D : 第四次
-`,answer:"C"},{question:`下列关于挣值管理⽅法的描述中错误的是?
+`,answer:"C"},{question:`下列关于挣值管理方法的描述中错误的是?
 
-A : 这是⼀种可以⽤来跟踪项⽬预算消耗的⽅法
-B : 这种⽅法⾼度依赖估算准确性
-C : 这种⽅法可以⽀持质量管理
-D : 这种⽅法可以⽤来跟踪项⽬进度
-`,answer:"C"},{question:`下列描述当中，属于过程经理的⼯作内容有哪些（多选）
+A : 这是一种可以用来跟踪项目预算消耗的方法
+B : 这种方法高度依赖估算准确性
+C : 这种方法可以支持质量管理
+D : 这种方法可以用来跟踪项目进度
+`,answer:"C"},{question:`下列描述当中，属于过程经理的工作内容有哪些（多选）
 
-A : 建⽴团队的开发标准
-B : 主持项⽬周例会
+A : 建立团队的开发标准
+B : 主持项目周例会
 C : 记录周例会的会议记录
 D : 制定开发计划
-`,answer:"AC"},{question:`为了制定Schedule plan，下述描述中，哪⼀项是不需要的？
+`,answer:"AC"},{question:`为了制定Schedule plan，下述描述中，哪一项是不需要的？
 
 A : Task size
 B : Task Order
 C : Schedule Hour
 D : Task hour for each task
-`,answer:"A"},{question:`有了Task Order、Schedule Hour、Task hour for each task，还需要补充下述哪⼀项数据就可以定义Schedule Plan了？
+`,answer:"A"},{question:`有了Task Order、Schedule Hour、Task hour for each task，还需要补充下述哪一项数据就可以定义Schedule Plan了？
 
 A : Task List
 B : Plan Value
 C : Earned Value
 D : Nothing
-`,answer:"A"},{question:`下列术语描述的技术或者⽅法是同类型的是?（ 多选 ）
+`,answer:"A"},{question:`下列术语描述的技术或者方法是同类型的是?（ 多选 ）
 
 A : CMMI SPICE PDCA：SPICE是软件过程管理
 B : IDEAL XP SCRUM：IDEAL是软件过程改进，XP和SCRUM是软件过程
@@ -115,7 +115,7 @@ D : 一致性
 A : Code and Fix
 B : 迭代式开发
 C : 瀑布生命周期模型
-D :  成熟度模型
+D : 成熟度模型
 `,answer:"A"},{question:`对比TSP和SCRUM，下列说法不恰当的是（多选）
 
 A : 都是过程框架，需要填补具体实践之后才是一个可以工作的过程
@@ -175,7 +175,7 @@ D : DRL只能预测，不能度量
 A : PQI表征模块级别开发中的过程规范化程度
 B : PQI越高越好，可以充分保障质量
 C : PQI越低越好
-D :  PQI不能用作质量规划
+D : PQI不能用作质量规划
 `,answer:"BCD"},{question:`关于PQI，下列说法中正确的是（ 多选 ）
 
 A : PQI可以辅助判断模块开发质量 
@@ -224,7 +224,7 @@ A : 执行表是唯一一种提供全面设计验证的手段
 B : 跟踪表是唯一一种提供全面设计验证的手段
 C : 受限于手工方式，都易于出错
 D : 符号化执行验证不适合复杂的计算过程
-`,answer:"C"},{question:`关于使用程序正确性证明手段验证while-do循 环设计的描述中，正确的是?（多选）
+`,answer:"C"},{question:`关于使用程序正确性证明手段验证while-do循环设计的描述中，正确的是?（多选）
 
 A : 如果设计是正确的，那么应满足的条件之一是循环判断条件最后一定可以变为false
 B : 如果设计是正确的，那么应满足的条件之一是循环判断条件为真的时候，单独的循环结构执行结果与 循环体再加一个循环结构，其执行结果一致
@@ -317,4 +317,4 @@ D : 根因分析活动终止的唯一特征就是找到相应的根因的明确�
 `,answer:"AD"}],sl={class:"container"},rl={class:"header"},il={class:"progress-container"},ol={class:"progress-text"},ll={key:0,class:"question-container"},cl={class:"question-header"},fl={class:"question-number"},ul={key:0,class:"question-type"},al={key:1,class:"question-type"},dl={class:"question-content"},hl={class:"options-container"},pl=["onClick"],gl={class:"option-letter"},_l={class:"option-text"},ml={class:"controls"},bl=["disabled"],vl={key:1,class:"result-container"},yl={class:"score-circle"},Cl={class:"score-text"},xl=sr({__name:"Exercise",setup(e){const t=T=>{const E=T.split(`
 `),L=[],P=/^([A-Z]) : (.+)$/;for(let K=0;K<E.length;K++){const ue=E[K].match(P);ue&&L.push({letter:ue[1],text:ue[2]})}return L},n=gt(()=>ae.map(T=>({...T,options:t(T.question),isMultiple:T.question.includes("多选")}))),s=qt(0),r=qt(Array(ae.length).fill("")),i=qt(!1),o=qt(0),l=gt(()=>(s.value+1)/ae.length*100),u=gt(()=>n.value[s.value]),h=T=>r.value[s.value].includes(T),a=T=>{const E=r.value[s.value];u.value.isMultiple?E.includes(T)?r.value[s.value]=E.replace(T,""):r.value[s.value]=E+T:r.value[s.value]=T},p=()=>{s.value>0&&s.value--},w=()=>{s.value<ae.length-1&&s.value++},A=()=>{let T=0;for(let E=0;E<ae.length;E++){const L=[...r.value[E]].sort().join(""),P=[...ae[E].answer].sort().join("");L===P&&T++}o.value=T,i.value=!0},R=()=>{const T=o.value/ae.length*100;return T>=90?"太棒了！您已经掌握了这些知识点！":T>=70?"做得很好！继续努力！":T>=50?"不错的尝试！复习一下会更好！":"需要更多练习，加油！"},I=gt(()=>{const T=o.value/ae.length*100;return T>=90?"excellent":T>=70?"good":T>=50?"average":"poor"}),G=()=>{s.value=0,r.value=Array(ae.length).fill(""),i.value=!1,o.value=0};return(T,E)=>(Ce(),Ee("div",sl,[W("div",rl,[E[0]||(E[0]=W("h1",null,[W("i",{class:"fas fa-graduation-cap"}),et(" 软件质量管理客观题练习")],-1)),W("div",il,[W("div",{class:"progress-bar",style:en({width:l.value+"%"})},null,4)]),W("div",ol,he(s.value+1)+" / "+he(Nt(ae).length)+" ("+he(Math.round(l.value))+"%) ",1)]),i.value?(Ce(),Ee("div",vl,[E[5]||(E[5]=W("h2",{class:"result-title"},"测试完成!",-1)),W("div",yl,[W("div",Cl,he(o.value)+" / "+he(Nt(ae).length),1)]),W("div",{class:xt(["feedback",I.value])},he(R()),3),W("button",{class:"restart-btn",onClick:G},E[4]||(E[4]=[W("i",{class:"fas fa-redo"},null,-1),et(" 重新测试 ")]))])):(Ce(),Ee("div",ll,[W("div",cl,[W("div",fl,"题目 "+he(s.value+1),1),u.value.isMultiple?(Ce(),Ee("div",ul,"多选题")):(Ce(),Ee("div",al,"单选题"))]),W("div",dl,he(u.value.question.split(`
 
-`)[0]),1),W("div",hl,[(Ce(!0),Ee(we,null,$i(u.value.options,(L,P)=>(Ce(),Ee("div",{key:P,class:xt(["option",{selected:h(L.letter)}]),onClick:K=>a(L.letter)},[W("div",gl,he(L.letter),1),W("div",_l,he(L.text),1)],10,pl))),128))]),W("div",ml,[W("button",{class:"btn btn-prev",onClick:p,disabled:s.value===0},E[1]||(E[1]=[W("i",{class:"fas fa-arrow-left"},null,-1),et(" 上一题 ")]),8,bl),s.value<Nt(ae).length-1?(Ce(),Ee("button",{key:0,class:"btn btn-next",onClick:w},E[2]||(E[2]=[et(" 下一题 "),W("i",{class:"fas fa-arrow-right"},null,-1)]))):(Ce(),Ee("button",{key:1,class:"btn btn-finish",onClick:A},E[3]||(E[3]=[et(" 完成测试 "),W("i",{class:"fas fa-check"},null,-1)])))])]))]))}}),Br=(e,t)=>{const n=e.__vccOpts||e;for(const[s,r]of t)n[s]=r;return n},wl=Br(xl,[["__scopeId","data-v-8401e4fb"]]),Al=sr({__name:"App",setup(e){return(t,n)=>(Ce(),vo(wl,{msg:"Vite + Vue"}))}}),Sl=Br(Al,[["__scopeId","data-v-a0d4f2b9"]]);el(Sl).mount("#app");
+`)[0]),1),W("div",hl,[(Ce(!0),Ee(we,null,$i(u.value.options,(L,P)=>(Ce(),Ee("div",{key:P,class:xt(["option",{selected:h(L.letter)}]),onClick:K=>a(L.letter)},[W("div",gl,he(L.letter),1),W("div",_l,he(L.text),1)],10,pl))),128))]),W("div",ml,[W("button",{class:"btn btn-prev",onClick:p,disabled:s.value===0},E[1]||(E[1]=[W("i",{class:"fas fa-arrow-left"},null,-1),et(" 上一题 ")]),8,bl),s.value<Nt(ae).length-1?(Ce(),Ee("button",{key:0,class:"btn btn-next",onClick:w},E[2]||(E[2]=[et(" 下一题 "),W("i",{class:"fas fa-arrow-right"},null,-1)]))):(Ce(),Ee("button",{key:1,class:"btn btn-finish",onClick:A},E[3]||(E[3]=[et(" 完成测试 "),W("i",{class:"fas fa-check"},null,-1)])))])]))]))}}),Br=(e,t)=>{const n=e.__vccOpts||e;for(const[s,r]of t)n[s]=r;return n},wl=Br(xl,[["__scopeId","data-v-f9c9f608"]]),Al=sr({__name:"App",setup(e){return(t,n)=>(Ce(),vo(wl,{msg:"Vite + Vue"}))}}),Sl=Br(Al,[["__scopeId","data-v-a0d4f2b9"]]);el(Sl).mount("#app");
