@@ -1,5 +1,5 @@
-# Vue 3 + TypeScript + Vite
+# 软件质量管理期末复习
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+网站：https://ziqingchuan.github.io/SQM/
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+做这个的目的一个是方便随时随地看知识点，另一个是为了方便以后学弟学妹们继续壮大这个资料库，优化代码（毕竟写的很仓促），希望大家都能贡献一份力量，薪火相传！
