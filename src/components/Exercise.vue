@@ -4,6 +4,7 @@ import { multipleChoice } from "../consts/multipleChoice.ts";
 import { shortAnswer } from "../consts/shortAnswer.ts";
 import Light from "../icons/Light.vue";
 import Dark from "../icons/Dark.vue";
+import Thinking from "../icons/Thinking.vue";
 
 const isShortAnswerTab = ref(false); // 是否切换到简答题 Tab
 const isDarkMode = ref(false); // 是否为暗色模式
@@ -19,6 +20,7 @@ const currentShortAnswer = computed(() => shortAnswer[shortAnswerIndex.value]); 
 
 // 上一简答题
 const prevShortAnswer = () => {
+  isFlipped.value = true; // 切换卡片翻转状态
   if (shortAnswerIndex.value > 0) {
     shortAnswerIndex.value--;
   }
@@ -26,6 +28,7 @@ const prevShortAnswer = () => {
 
 // 下一简答题
 const nextShortAnswer = () => {
+  isFlipped.value = true; // 切换卡片翻转状态
   if (shortAnswerIndex.value < shortAnswer.length - 1) {
     shortAnswerIndex.value++;
   }
@@ -170,6 +173,14 @@ const restartTest = () => {
   showResults.value = false;
   score.value = 0;
 };
+
+// 卡片翻转状态
+const isFlipped = ref(true); // 是否翻转
+
+// 切换卡片翻转状态
+const toggleFlip = () => {
+  isFlipped.value = !isFlipped.value;
+};
 </script>
 
 <template>
@@ -282,14 +293,18 @@ const restartTest = () => {
     <div v-else class="short-answer-container">
       <div class="question-header">
         <div class="link-container">
-          <a href="https/ziqingchuan.github.io/SSD/" target="_blank" class="link-btn">
+          <a href="https://ziqingchuan.github.io/SSD/" target="_blank" class="link-btn">
             软件系统设计复习网站
           </a>
         </div>
       </div>
       <div class="short-answer-question">{{ currentShortAnswer.question }}</div>
-      <div class="short-answer-answer">
-        <p>{{ currentShortAnswer.answer }}</p>
+      <div class="short-answer-answer" @click="toggleFlip">
+        <p v-if="!isFlipped">{{ currentShortAnswer.answer }}</p>
+        <div v-else class="thinking-mode">
+          <Thinking />
+          <span>答案是什么来着？</span>
+        </div>
       </div>
       <div class="controls">
         <button
@@ -803,5 +818,13 @@ const restartTest = () => {
 
 .dark-mode-btn:hover {
   transform: translateY(10px);
+}
+
+.thinking-mode {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 </style>
