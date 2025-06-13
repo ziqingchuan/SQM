@@ -101,7 +101,7 @@ export const multipleChoice  = [
             "B : IDEAL、XP、SCRUM\n"+
             "C : Cleanroom、Gate、TSP\n"+
             "D : Waterfall、SCRUM、XP\n",
-        "answer": "CD"
+        "answer": "AC"
     },
     {
         "question": "“Measure twice, cut once” 描述的是下述哪个软件开发场景\n\n"+
@@ -136,12 +136,12 @@ export const multipleChoice  = [
         "answer": "A"
     },
     {
-        "question": "对比TSP和SCRUM，下列说法不恰当的是（多选）\n\n"+
+        "question": "对比TSP和SCRUM，下列说法不恰当的是\n\n"+
             "A : 都是过程框架，需要填补具体实践之后才是一个可以工作的过程\n"+
             "B : 一种是计划驱动方法，另外一种是敏捷方法\n"+
             "C : SCRUM适合迭代式场景，TSP适合瀑布场景\n"+
             "D : 两种方法都需要进行度量数据收集、分析，从而支持管理决策\n",
-        "answer": "BC"
+        "answer": "C"
     },
     {
         "question": "以下特征适用麦克勒格Y理论（McGregors Theory Y）激励的场合是\n\n"+
