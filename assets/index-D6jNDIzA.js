@@ -92,7 +92,7 @@ A : CMMI、SPICE、PDCA
 B : IDEAL、XP、SCRUM
 C : Cleanroom、Gate、TSP
 D : Waterfall、SCRUM、XP
-`,answer:"CD"},{question:`“Measure twice, cut once” 描述的是下述哪个软件开发场景
+`,answer:"AC"},{question:`“Measure twice, cut once” 描述的是下述哪个软件开发场景
 
 A : 软件设计
 B : 代码评审
@@ -116,13 +116,13 @@ A : Code and Fix
 B : 迭代式开发
 C : 瀑布生命周期模型
 D : 成熟度模型
-`,answer:"A"},{question:`对比TSP和SCRUM，下列说法不恰当的是（多选）
+`,answer:"A"},{question:`对比TSP和SCRUM，下列说法不恰当的是
 
 A : 都是过程框架，需要填补具体实践之后才是一个可以工作的过程
 B : 一种是计划驱动方法，另外一种是敏捷方法
 C : SCRUM适合迭代式场景，TSP适合瀑布场景
 D : 两种方法都需要进行度量数据收集、分析，从而支持管理决策
-`,answer:"BC"},{question:`以下特征适用麦克勒格Y理论（McGregors Theory Y）激励的场合是
+`,answer:"C"},{question:`以下特征适用麦克勒格Y理论（McGregors Theory Y）激励的场合是
 
 A : 关注工作环境，薪金等
 B : 更喜欢经常的指导，避免承担责任，缺乏主动性 
