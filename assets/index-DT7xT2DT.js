@@ -320,7 +320,13 @@ A : Scrum of Scrums
 B : 每日站会
 C : ART
 D : PI Objectives
-`,answer:"A"},{question:`根据Scrum价值观，当发现Sprint目标无法实现时，团队最应该展现的是？
+`,answer:"C"},{question:`有效的Sprint回顾会议应该？
+
+A : 追究任务未完成的责任
+B : 制定下一个Sprint详细计划
+C : 聚焦改进
+D : 评审产品功能实现
+`,answer:"C"},{question:`根据Scrum价值观，当发现Sprint目标无法实现时，团队最应该展现的是？
 
 A : 隐瞒进度风险
 B : 要求延长Sprint
